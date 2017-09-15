@@ -31,14 +31,14 @@ window.router = new VueRouter({
 // components
 require('./components');
 
+// Vuex for my fake db and state management
+import { store } from './store/store';
+
 // init vue
 const app = new Vue({
-    router: router,
+    router,
 
-    data: {
-        // For my fake database
-        users: []
-    }
+    store,
 
 }).$mount('#app');
 

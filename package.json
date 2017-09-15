@@ -21,6 +21,7 @@
   "dependencies": {
     "toastr": "^2.1.2",
     "vue-progressbar": "^0.7.3",
-    "vue-router": "^2.7.0"
+    "vue-router": "^2.7.0",
+    "vuex": "^2.4.0"
   }
 }

@@ -49,8 +49,10 @@
 
 				setTimeout(() => {
 					this.$Progress.finish();
-					this.user.id = Object.keys(this.$root.$data.users).length + 1;
-					this.$root.$data.users.push(this.user);
+					this.user.id = Object.keys(this.$store.state.users).length + 1;
+
+					this.$store.state.users.push(this.user);
+
 					router.push('/users/' + this.user.id);
 				}, 1000);
 			}

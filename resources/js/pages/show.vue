@@ -33,7 +33,7 @@
 
 		methods: {
 			fetchUser() {
-				let user = this.$root.$data.users.filter((value, index) => { console.log(value);
+				let user = this.$store.state.users.filter((value, index) => {
 					return value.id == this.$route.params.id;
 				});
 

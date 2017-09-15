@@ -48,7 +48,7 @@
 
 		data() {
 			return {
-				users: this.$root.$data.users
+				
 			}
 		},
 
@@ -57,6 +57,10 @@
 		},
 
 		computed: {
+			users() {
+				return this.$store.state.users;
+			},
+
 			users_count() {
 				return Object.keys(this.users).length;
 			}
