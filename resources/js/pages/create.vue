@@ -47,7 +47,7 @@
 			fakeCreate() {
 				this.$Progress.start();
 
-				setTimeout(() => {
+				setTimeout(/* server url and data, then */() => {
 					this.$Progress.finish();
 					this.user.id = Object.keys(this.$store.state.users).length + 1;
 

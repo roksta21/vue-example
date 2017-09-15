@@ -1,6 +1,6 @@
 <template>
 	<div class="container">
-		<div class="row">
+		<div class="row" v-if="! loading">
 			<div class="col-md-8 col-md-offset-2">
 				<h1 align="center">All Users</h1>
 				<div class="row">
@@ -43,24 +43,28 @@
 <script>
 	export default {
 		mounted() {
-
+			this.fetchUsers();
 		},
 
 		data() {
 			return {
-				
+				users: [],
+				loading: true
 			}
 		},
 
 		methods: {
-
+			fetchUsers() {
+				this.$Progress.start();
+				setTimeout(/*(server here,data).then*/ (/*response = this.$store.state.users*/) => {
+					this.$Progress.finish();
+					this.users = this.$store.state.users;
+					this.loading = false;
+				}, 500 /*assuming server takes 500ms to respond*/);
+			}
 		},
 
 		computed: {
-			users() {
-				return this.$store.state.users;
-			},
-
 			users_count() {
 				return Object.keys(this.users).length;
 			}
